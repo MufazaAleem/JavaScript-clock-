@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Digital Clock in JavaScript</title>
+	<style>
+		body {
+			background-color: #222;
+			color: #fff;
+		}
+		h1 {
+			font-size: 8rem;
+			margin-top: 2rem;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="clock"></h1>
+
+	<script>
+		function updateTime() {
+			let today = new Date();
+			let hours = today.getHours().toString().padStart(2, "0");
+			let minutes = today.getMinutes().toString().padStart(2, "0");
+			let seconds = today.getSeconds().toString().padStart(2, "0");
+
+			let timeString = `${hours}:${minutes}:${seconds}`;
+			document.getElementById("clock").innerHTML = timeString;
+		}
+
+		setInterval(updateTime, 1000);
+	</script>
+</body>
+</html>
